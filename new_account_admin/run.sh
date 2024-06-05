@@ -19,3 +19,5 @@ fi
 cd snippets/new_account_admin
 terraform init
 terraform apply -auto-approve
+echo `terraform output access_keys_id`
+echo `terraform output access_keys_secret`
