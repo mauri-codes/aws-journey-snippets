@@ -1,5 +1,5 @@
 #!/bin/bash
-# cd ~ && wget -O run.sh "https://raw.github.com/mauri-codes/aws-journey-snippets/main/new_account_admin/run.sh" && source run.sh new_account_admin
+# cd ~ && wget -O run.sh "https://raw.github.com/mauri-codes/aws-journey-snippets/main/run_tf.sh" && source run.sh new_account_admin
 
 PROJECT=$1
 
