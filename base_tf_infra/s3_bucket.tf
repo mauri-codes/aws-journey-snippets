@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "infrastructure" {
-  bucket = var.bucket_name
+  bucket        = local.bucket_name
   force_destroy = true
 }
 
@@ -18,7 +18,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "backup" {
     status = "Enabled"
     noncurrent_version_expiration {
       newer_noncurrent_versions = 3
-      noncurrent_days = 30
+      noncurrent_days           = 30
     }
   }
 }
@@ -28,7 +28,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "encryption" {
 
   rule {
     apply_server_side_encryption_by_default {
-      sse_algorithm     = "aws:kms"
+      sse_algorithm = "aws:kms"
     }
   }
 }
@@ -51,8 +51,8 @@ data "aws_iam_policy_document" "tls_enforcement" {
     ]
 
     resources = [
-      "arn:aws:s3:::${var.bucket_name}",
-      "arn:aws:s3:::${var.bucket_name}/*"
+      "arn:aws:s3:::${local.bucket_name}",
+      "arn:aws:s3:::${local.bucket_name}/*"
     ]
 
     condition {
@@ -76,8 +76,8 @@ data "aws_iam_policy_document" "tls_enforcement" {
     ]
 
     resources = [
-      "arn:aws:s3:::${var.bucket_name}",
-      "arn:aws:s3:::${var.bucket_name}/*"
+      "arn:aws:s3:::${local.bucket_name}",
+      "arn:aws:s3:::${local.bucket_name}/*"
     ]
   }
 }
