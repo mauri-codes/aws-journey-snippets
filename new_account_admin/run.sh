@@ -13,7 +13,7 @@ fi
 if [ -f snippets ]; then
     echo "Repo Already Cloned"
 else
-    git clone git@github.com:mauri-codes/aws-journey-snippets.git snippets
+    git clone https://github.com/mauri-codes/aws-journey-snippets.git snippets
 fi
 
 cd snippets/new_account_admin

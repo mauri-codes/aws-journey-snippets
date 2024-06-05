@@ -3,4 +3,5 @@ output "access_keys_secret" {
 }
 output "access_keys_id" {
   value = aws_iam_access_key.access_keys.id
+  sensitive = true
 }
