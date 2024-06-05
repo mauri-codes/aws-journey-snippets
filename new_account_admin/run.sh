@@ -18,4 +18,4 @@ fi
 
 cd snippets/new_account_admin
 terraform init
-terraform apply -input=false
+terraform apply -auto-approve
