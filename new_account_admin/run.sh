@@ -1,7 +1,7 @@
 #!/bin/bash
+# wget -O run.sh "https://raw.github.com/mauri-codes/aws-journey-snippets/main/new_account_admin/run.sh" && source run.sh
 
-
-# cd ~
+cd ~
 if terraform --version ; then
     echo "Terraform Already Installed"
 else
@@ -9,3 +9,13 @@ else
     sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
     sudo yum -y install terraform
 fi
+
+if [ -f snippets ]; then
+    echo "Repo Already Cloned"
+else
+    git clone git@github.com:mauri-codes/aws-journey-snippets.git snippets
+fi
+
+cd snippets/new_account_admin
+terraform init
+terraform apply
