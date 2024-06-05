@@ -1,9 +1,9 @@
 resource "aws_iam_user" "admin" {
-  name = "admin"
+  name = "admin2"
 }
 
 resource "aws_iam_group" "admins" {
-  name = "admins"
+  name = "admins2"
 }
 
 resource "aws_iam_user_group_membership" "membership" {
