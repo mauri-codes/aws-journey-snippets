@@ -6,6 +6,6 @@ output "access_keys_id" {
   value = aws_iam_access_key.access_keys.id
 }
 output "user_password" {
-  value =  aws_iam_user_login_profile.console_access.encrypted_password
+  value =  aws_iam_user_login_profile.console_access.password
   sensitive = true
 }
