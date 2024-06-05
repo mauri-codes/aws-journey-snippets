@@ -41,6 +41,7 @@ resource "aws_s3_bucket_policy" "tls_enforcement" {
 data "aws_iam_policy_document" "tls_enforcement" {
   statement {
     sid = "EnforcedTLS"
+    effect = "Deny"
     principals {
       type        = "*"
       identifiers = ["*"]
@@ -66,6 +67,7 @@ data "aws_iam_policy_document" "tls_enforcement" {
   }
   statement {
     sid = "RootAccess"
+    effect = "Allow"
     principals {
       type        = "AWS"
       identifiers = ["arn:aws:iam::${local.account_id}:root"]
