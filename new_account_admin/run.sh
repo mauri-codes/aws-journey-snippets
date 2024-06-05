@@ -1,5 +1,5 @@
 #!/bin/bash
-# wget -O run.sh "https://raw.github.com/mauri-codes/aws-journey-snippets/main/new_account_admin/run.sh" && source run.sh
+# cd ~ && wget -O run.sh "https://raw.github.com/mauri-codes/aws-journey-snippets/main/new_account_admin/run.sh" && source run.sh
 
 cd ~
 if terraform --version ; then
@@ -18,4 +18,4 @@ fi
 
 cd snippets/new_account_admin
 terraform init
-terraform apply
+terraform apply -input=false
