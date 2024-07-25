@@ -1,5 +1,8 @@
+locals {
+  random_id = random_string.random.id
+}
 resource "aws_iam_role" "aws_journey_role" {
-  name               = "AWS_JOURNEY_ROLE_${random_string.random.id}"
+  name               = "AWS_JOURNEY_ROLE_${random_id}"
   path               = "/"
   assume_role_policy = data.aws_iam_policy_document.journey_assume_role_policy.json
   managed_policy_arns = [
@@ -20,7 +23,7 @@ data "aws_iam_policy_document" "journey_assume_role_policy" {
 }
 
 resource "aws_iam_policy" "additional_permissions" {
-  name = "JOURNEY_PERMISSIONS"
+  name = "JOURNEY_PERMISSIONS_${random_id}"
 
   policy = jsonencode({
     Version = "2012-10-17"
