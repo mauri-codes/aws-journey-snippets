@@ -7,7 +7,13 @@ token = os.environ["TOKEN"]
 region = os.environ["REGION"]
 role_arn = os.environ["ROLE_ARN"]
 account_id = os.environ["ACCOUNT_ID"]
-url =  "https://apiv2.aws-journey.click/awsAccount"
+env = os.environ["ENV"]
+
+if env == "dev":
+   url =  "https://apiv2.aws-journey.click/awsAccount"
+else:
+   url =  "https://apiv2.aws-journey.net/awsAccount"
+
 
 def register_account():
    request_data = {
