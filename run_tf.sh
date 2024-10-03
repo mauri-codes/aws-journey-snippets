@@ -21,6 +21,15 @@ else
 fi
 
 cd $PROJECT
+if [ -f prerun.sh ]; then
+    source prerun.sh
+    cd ..
+else
+    echo "----"
+fi
+
+echo `pwd`
+
 terraform init
 terraform apply -auto-approve
 
