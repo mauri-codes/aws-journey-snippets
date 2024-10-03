@@ -16,7 +16,7 @@ data "archive_file" "lambda" {
 }
 
 resource "aws_s3_bucket_notification" "trigger" {
-  bucket = local.bucket_name
+  bucket = aws_s3_bucket.images.id
 
   lambda_function {
     lambda_function_arn = aws_lambda_function.function.arn
