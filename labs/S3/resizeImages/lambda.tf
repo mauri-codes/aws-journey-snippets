@@ -16,7 +16,10 @@ data "archive_file" "lambda" {
 }
 
 resource "aws_s3_bucket_notification" "trigger" {
-  depends_on    = [aws_lambda_function.function, aws_s3_bucket.images]
+  depends_on    = [
+    aws_lambda_function.function,
+    aws_s3_bucket.images
+  ]
   bucket = aws_s3_bucket.images.id
 
   lambda_function {

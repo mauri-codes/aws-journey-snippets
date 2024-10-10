@@ -10,5 +10,5 @@ export REGION=$REGION
 
 python3 register.py
 
-#REGION=<REGION> ALIAS=<ALIAS> TOKEN=<TOKEN> source run.sh register_account
-#ENV=<ENV> REGION=<REGION> ALIAS=<ALIAS> TOKEN=<TOKEN> source run.sh register_account
+#REGION=<REGION> ALIAS=<ALIAS> TOKEN=<TOKEN> ATOKEN=<ATOKEN> source run.sh register_account
+#ENV=<ENV> REGION=<REGION> ALIAS=<ALIAS> TOKEN=<TOKEN> ATOKEN=<ATOKEN> source run.sh register_account
