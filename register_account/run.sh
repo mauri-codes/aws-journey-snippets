@@ -7,6 +7,7 @@ export TOKEN=$TOKEN
 export ATOKEN=$ATOKEN
 export ROLE_ARN=$ROLE_ARN
 export REGION=$REGION
+export ENV="${ENV:-dev}"
 
 python3 register.py
 
